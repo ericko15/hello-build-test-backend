@@ -1,0 +1,24 @@
+volumes:
+  local_mongo_data: {}
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: compose/local/Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
+    env_file:
+      - .envs/.local
+    ports:
+      - 3000:3000
+
+  mongo:
+    image: mongo
+    volumes:
+      - local_mongo_data:/data/db
+    ports:
+      - 27017:27017

@@ -1,0 +1,58 @@
+{
+  "files": [
+    "src/index.ts"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": true,
+    "target": "es2017",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "lib": [
+      "es2017"
+    ],
+    "noImplicitAny": false,
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "rootDir": "./",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "allowJs": true,
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@data_access/*": [
+        "src/data_access/*"
+      ]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ]
+  },
+  "types": [
+    "node"
+  ],
+  "typeRoots": [
+    "./node_modules/@types"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "./src/**/*.test.ts",
+    "dist"
+  ]
+}

@@ -1,0 +1,2 @@
+MONGO_URL=mongodb://localhost/hello-build
+SECRET=5CE46ACCBF9D3FC9E765ACD48F8F2
